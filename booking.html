@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Asrah FC | Book Friendly Match</title>
+  <script>
+    (function () {
+      const logged = localStorage.getItem("asrahfc_logged_in") === "true";
+      if (!logged) {
+        window.location.replace("auth.html?next=booking.html&page=Book%20Friendly%20Match");
+      }
+    })();
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="site-bg">
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top navbar-glass">
+    <div class="container">
+      <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="index.html">
+        <img src="assets/img/LOGO ASRAH.jpg" alt="Asrah FC Logo" class="brand-logo">
+        <span>Asrah FC</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navBook" aria-controls="navBook" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navBook">
+        <ul class="navbar-nav ms-auto gap-lg-2 align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">🏠 Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="dashboard.html">⚽ Team Hub</a></li>
+          <li class="nav-item"><a class="nav-link" href="dataview1.html">📊 Match History</a></li>
+          <li class="nav-item"><a class="nav-link active" href="booking.html">📅 Book Friendly</a></li>
+          <li class="nav-item"><button class="btn btn-outline-light btn-sm ms-lg-2" id="logoutBtnTop">Logout</button></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="sub-hero">
+    <div class="container py-5 reveal">
+      <span class="badge rounded-pill badge-brand mb-3">📅 Friendly Match Booking</span>
+      <h1 class="fw-bold text-white mb-2">Book a Friendly Match</h1>
+      <p class="text-white-50 mb-0">
+        Ready to challenge Asrah FC? Fill in your team details and send your request directly through WhatsApp.
+      </p>
+    </div>
+  </header>
+
+  <section class="container py-5">
+    <div class="row g-4 align-items-start">
+      <div class="col-lg-8 reveal">
+        <div class="content-card booking-card">
+          <h4 class="fw-bold mb-2">Friendly Match Form</h4>
+          <p class="text-muted mb-4">
+            Complete the details below. Your request will be prepared automatically as a WhatsApp message to the Asrah FC admin.
+          </p>
+          <form id="bookingForm" class="row g-3">
+            <div class="col-md-6">
+              <label for="teamName" class="form-label">Team Name</label>
+              <input id="teamName" class="form-control" required placeholder="e.g. Mutiara FC" />
+            </div>
+            <div class="col-md-6">
+              <label for="contactPerson" class="form-label">Contact Person</label>
+              <input id="contactPerson" class="form-control" required placeholder="e.g. Haziq" />
+            </div>
+            <div class="col-md-6">
+              <label for="contactInfo" class="form-label">Phone / WhatsApp</label>
+              <input id="contactInfo" class="form-control" required placeholder="01x-xxxxxxx" />
+            </div>
+            <div class="col-md-3">
+              <label for="preferredDate" class="form-label">Preferred Date</label>
+              <input id="preferredDate" type="date" class="form-control" required />
+            </div>
+            <div class="col-md-3">
+              <label for="preferredTime" class="form-label">Preferred Time</label>
+              <input id="preferredTime" type="time" class="form-control" required />
+            </div>
+            <div class="col-md-6">
+              <label for="venue" class="form-label">Venue</label>
+              <select id="venue" class="form-select" required>
+                <option value="" selected disabled>Select venue</option>
+                <option>Footballhub Eco Grandeur</option>
+                <option>Footballhub KSL Klang</option>
+                <option>Footballhub Bandar Seri Coalfields</option>
+                <option>Footballhub Rimbayu</option>
+                <option>Footballhub ABMK @ U15 Shah Alam</option>
+                <option>Footballhub Elmina</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label for="gameType" class="form-label">Game Type</label>
+              <select id="gameType" class="form-select" required>
+                <option value="" selected disabled>Select type</option>
+                <option>Friendly (11v11)</option>
+                <option>Friendly (9v9)</option>
+                <option>Futsal</option>
+              </select>
+            </div>
+
+            <div class="col-12">
+              <label for="notes" class="form-label">Message / Notes</label>
+              <textarea id="notes" class="form-control" rows="3" placeholder="Kickoff time, jersey colour, referee request, or any important notes."></textarea>
+            </div>
+
+            <div class="col-12 d-flex flex-wrap gap-2">
+              <button class="btn btn-brand" type="submit">Submit via WhatsApp</button>
+              <a class="btn btn-outline-brand" id="openIGBtn" href="#instagram" target="_blank" rel="noopener">Asrah FC Instagram</a>
+            </div>
+
+            <div class="col-12">
+              <div id="bookingMsg" class="alert alert-success mt-2" style="display:none;"></div>
+              <div class="small text-muted mt-2">
+                Thank you for your invitation. Please wait for the admin to confirm availability.
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="col-lg-4 reveal">
+        <div class="content-card h-100">
+          <span class="eyebrow">Booking Tips</span>
+          <h5 class="fw-bold mb-3">Before you submit</h5>
+          <ul class="booking-tips mb-4">
+            <li>Choose a clear date, time, and venue.</li>
+            <li>Include your WhatsApp number for quick confirmation.</li>
+            <li>Mention jersey colour to avoid clashes.</li>
+          </ul>
+          <div class="live-score-card">
+            <span class="small text-white-50">Static Display Widget</span>
+            <h5 class="text-white fw-bold mb-2">Latest Friendly Result</h5>
+            <div class="score-line"><span>Asrah FC</span><strong>3 - 1</strong><span>Bidadari Subuh FC</span></div>
+            <p class="text-white-50 small mb-0">Displayed as a simple engagement card, not a live API.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ <footer class="footer mt-auto">
+    <div class="container d-flex flex-wrap justify-content-between align-items-center gap-3">
+      <p class="mb-0">© 2025 Asrah FC</p>
+
+      <div class="social-links">
+        <a href="#instagram">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ====== CONFIG (CHANGE THESE) ======
+    const ADMIN_WHATSAPP = "601121257151"; // Admin number without + or spaces
+    const ASRAH_IG = "asrah.fc";           // Asrah FC Instagram username
+
+    // Update IG button link
+    document.getElementById("openIGBtn").href = `https://www.instagram.com/${ASRAH_IG}/`;
+
+    // Logout
+    document.getElementById("logoutBtnTop").addEventListener("click", () => {
+      localStorage.setItem("asrahfc_logged_in", "false");
+      window.location.href = "index.html";
+    });
+
+    // Form submit -> open WhatsApp with full details + open IG
+    const bookingForm = document.getElementById("bookingForm");
+    const bookingMsg = document.getElementById("bookingMsg");
+
+    bookingForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const teamName = document.getElementById("teamName").value.trim();
+      const contactPerson = document.getElementById("contactPerson").value.trim();
+      const contactInfo = document.getElementById("contactInfo").value.trim();
+      const preferredDate = document.getElementById("preferredDate").value;
+      const preferredTime = document.getElementById("preferredTime").value;
+      const venue = document.getElementById("venue").value;
+      const gameType = document.getElementById("gameType").value;
+      const notes = document.getElementById("notes").value.trim();
+
+      if (!teamName || !contactPerson || !contactInfo || !preferredDate || !preferredTime || !venue || !gameType) {
+        bookingMsg.className = "alert alert-warning mt-2";
+        bookingMsg.style.display = "block";
+        bookingMsg.textContent = "Please complete all required fields before submitting.";
+        return;
+      }
+
+      const msgLines = [
+        "JOM FRIENDLY ⚽🔥",
+        "",
+        "Friendly Match Request (Asrah FC Website)",
+        "----------------------------------------",
+        `Team Name: ${teamName}`,
+        `Contact Person: ${contactPerson}`,
+        `Phone/WhatsApp: ${contactInfo}`,
+        `Preferred Date: ${preferredDate}`,
+        `Preferred Time: ${preferredTime}`,
+        `Venue: ${venue}`,
+        `Game Type: ${gameType}`,
+        `Message/Notes: ${notes ? notes : "-"}`,
+        "----------------------------------------",
+        "Please confirm availability. Thank you!"
+      ];
+
+      const waText = encodeURIComponent(msgLines.join("\n"));
+      const waLink = `https://wa.me/${ADMIN_WHATSAPP}?text=${waText}`;
+
+      bookingMsg.className = "alert alert-success mt-2";
+      bookingMsg.style.display = "block";
+      bookingMsg.textContent = "✅ Your request is ready. Opening WhatsApp with the full booking details...";
+
+      window.location.href = waLink;
+      window.open(`https://www.instagram.com/${ASRAH_IG}/`, "_blank", "noopener");
+    });
+  </script>
+
+  <script src="main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

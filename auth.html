@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Asrah FC | Login / Sign Up</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="login-bg">
+  <div class="overlay"></div>
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top navbar-glass">
+    <div class="container">
+      <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="index.html">
+        <img src="assets/img/LOGO ASRAH.jpg" alt="Asrah FC Logo" class="brand-logo">
+        <span>Asrah FC</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navAuth" aria-controls="navAuth" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navAuth">
+        <ul class="navbar-nav ms-auto gap-lg-2 align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">🏠 Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="dashboard.html">⚽ Team Hub</a></li>
+          <li class="nav-item"><a class="nav-link" href="dataview1.html">📊 Match History</a></li>
+          <li class="nav-item"><a class="nav-link" href="booking.html">📅 Book Friendly</a></li>
+          <li class="nav-item"><a class="btn btn-brand btn-sm ms-lg-2" href="auth.html">Login / Sign Up</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container d-flex justify-content-center align-items-center py-5 position-relative" style="min-height: calc(100vh - 70px);">
+    <div class="card p-4 shadow-lg auth-card reveal">
+      <div class="text-center mb-3">
+        <img src="assets/img/LOGO ASRAH.jpg" alt="Asrah FC Logo" class="auth-logo mb-3">
+        <h3 class="mb-1">Welcome to Asrah FC</h3>
+        <p class="text-muted small mb-0">Login to access Team Hub, Match History, and Friendly Booking.</p>
+      </div>
+      
+      <!-- notice to ask user login/signup first -->
+      <div id="authNotice" class="alert alert-warning small d-none mb-3"></div>
+      <ul class="nav nav-pills nav-fill mb-3 auth-tabs">
+        <li class="nav-item">
+          <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#tabLogin" type="button">Login</button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link" data-bs-toggle="pill" data-bs-target="#tabSignup" type="button">Sign Up</button>
+        </li>
+      </ul>
+
+      <div class="tab-content">
+        <!-- login -->
+        <div class="tab-pane fade show active" id="tabLogin">
+          <form id="loginForm">
+            <div class="mb-3">
+              <label for="loginUsername" class="form-label">Username</label>
+              <input type="text" id="loginUsername" class="form-control" placeholder="admin" required>
+            </div>
+            <div class="mb-2">
+              <label for="loginPassword" class="form-label">Password</label>
+              <div class="input-group">
+                <input type="password" id="loginPassword" class="form-control" placeholder="password123" required>
+                <button type="button" class="btn btn-outline-secondary" onclick="togglePassword('loginPassword')">👁</button>
+              </div>
+            </div>
+            <div class="form-text mb-2">Demo account: <strong>admin</strong> / <strong>password123</strong></div>
+            <div class="d-grid mb-2">
+              <button type="submit" class="btn btn-brand">Login</button>
+            </div>
+            <div id="loginError" class="text-danger text-center small" style="display:none;"></div>
+          </form>
+        </div>
+
+        <!-- signup -->
+        <div class="tab-pane fade" id="tabSignup">
+          <form id="signupForm">
+            <div class="mb-3">
+              <label for="suName" class="form-label">Full Name</label>
+              <input type="text" id="suName" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label for="suUsername" class="form-label">Username</label>
+              <input type="text" id="suUsername" class="form-control" required>
+            </div>
+            <div class="mb-2">
+              <label for="suPassword" class="form-label">Password</label>
+              <div class="input-group">
+                <input type="password" id="suPassword" class="form-control" required>
+                <button type="button" class="btn btn-outline-secondary" onclick="togglePassword('suPassword')">👁</button>
+              </div>
+            </div>
+            <div class="form-text mb-3">
+              This is a demo sign-up. Please use the demo account to log in.
+            </div>
+            <div class="d-grid">
+              <button type="submit" class="btn btn-dark">Create Account</button>
+            </div>
+            <div id="signupMsg" class="text-success text-center small mt-2" style="display:none;"></div>
+          </form>
+        </div>
+      </div>
+      <hr class="my-4">
+      <p class="small text-center text-muted mb-0">Fair play, teamwork, and respectful communication only.</p>
+    </div>
+  </div>
+  <script src="main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

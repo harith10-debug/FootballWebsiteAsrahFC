@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Asrah FC | Match History</title>
+  <script>
+    (function () {
+      const logged = localStorage.getItem("asrahfc_logged_in") === "true";
+      if (!logged) {
+        window.location.replace("auth.html?next=dataview1.html&page=Match%20History");
+      }
+    })();
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="site-bg">
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top navbar-glass">
+    <div class="container">
+      <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="index.html">
+        <img src="assets/img/LOGO ASRAH.jpg" alt="Asrah FC Logo" class="brand-logo">
+        <span>Asrah FC</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navDV1" aria-controls="navDV1" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navDV1">
+        <ul class="navbar-nav ms-auto gap-lg-2 align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">🏠 Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="dashboard.html">⚽ Team Hub</a></li>
+          <li class="nav-item"><a class="nav-link active" href="dataview1.html">📊 Match History</a></li>
+          <li class="nav-item"><a class="nav-link" href="booking.html">📅 Book Friendly</a></li>
+          <li class="nav-item"><button class="btn btn-outline-light btn-sm ms-lg-2" id="logoutBtnTop">Logout</button></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="sub-hero">
+    <div class="container py-5 reveal">
+      <span class="badge rounded-pill badge-brand mb-3">📊 Match History</span>
+      <h1 class="fw-bold text-white mb-2">Match History</h1>
+      <p class="text-white-50 mb-0">Review Asrah FC’s previous friendly matches, venues, scores, and scorers.</p>
+    </div>
+  </header>
+
+  <section class="container py-5">
+    <div class="content-card reveal">
+      <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-3">
+        <div>
+          <span class="eyebrow">Results Archive</span>
+          <h4 class="fw-bold mb-1">All Matches</h4>
+          <p class="text-muted mb-0">Search by opponent, competition, venue, result, or scorers.</p>
+        </div>
+        <div class="match-search-actions d-flex flex-wrap gap-2">
+          <input id="matchSearch" class="form-control" placeholder="Search matches...">
+          <button id="clearSearch" class="btn btn-outline-brand">Clear</button>
+        </div>
+      </div>
+      <div class="table-responsive">
+        <table class="table table-striped table-bordered align-middle mb-0 match-table" id="matchTable">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Competition</th>
+              <th>Opponent</th>
+              <th>Venue</th>
+              <th>Score</th>
+              <th>Result</th>
+              <th>Asrah Scorers</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2025-02-14</td>
+              <td>Friendly (11v11)</td>
+              <td>Revo Boys FC</td>
+              <td>Footballhub Eco Grandeur</td>
+              <td>3 - 2</td>
+              <td><span class="badge text-bg-success">Win</span></td>
+              <td>Yun 12’, Zikry 55’, Obek 77’</td>
+            </tr>
+            <tr>
+              <td>2025-03-07</td>
+              <td>Friendly (11v11)</td>
+              <td>Streetnine FC</td>
+              <td>Footballhub ABMK @U15 Shah Alam</td>
+              <td>1 - 1</td>
+              <td><span class="badge text-bg-secondary">Draw</span></td>
+              <td>Abby 34’</td>
+            </tr>
+            <tr>
+              <td>2025-05-31</td>
+              <td>Friendly (11v11)</td>
+              <td>Wolfv FC</td>
+              <td>Footballhub Rimbayu</td>
+              <td>0 - 2</td>
+              <td><span class="badge text-bg-danger">Loss</span></td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>2025-09-20</td>
+              <td>Friendly (11v11)</td>
+              <td>Bidadari Subuh FC</td>
+              <td>Footballhub Eco Grandeur</td>
+              <td>3 - 1</td>
+              <td><span class="badge text-bg-success">Win</span></td>
+              <td>Yun 9’, Pojey 61’, Furqan 81’</td>
+            </tr>
+            <tr>
+              <td>2025-10-03</td>
+              <td>Friendly (11v11)</td>
+              <td>EL FC</td>
+              <td>Footballhub Eco Grandeur</td>
+              <td>1 - 3</td>
+              <td><span class="badge text-bg-danger">Loss</span></td>
+              <td>Pojey 72’</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="container pb-5">
+    <div class="content-card reveal">
+      <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+        <div>
+          <h4 class="fw-bold mb-1">Upcoming Matches</h4>
+        </div>
+      </div>
+      <div class="table-responsive">
+            <table class="table table-hover align-middle mb-0">
+              <thead>
+                <tr>
+                  <th>Match</th>
+                  <th>Date</th>
+                  <th>Time</th>
+                  <th>Venue</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Asrah FC vs Thunder FC</td><td>15 June 2026</td><td>8:30 PM</td><td>Arena Futsal</td></tr>
+                <tr><td>Asrah FC vs Putra United</td><td>22 June 2026</td><td>9:00 PM</td><td>Sports Planet</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+  <footer class="footer mt-auto">
+    <div class="container d-flex flex-wrap justify-content-between align-items-center gap-3">
+      <p class="mb-0">© 2025 Asrah FC</p>
+
+      <div class="social-links">
+        <a href="#instagram">Instagram</a>
+      </div>
+    </div>
+  </footer>
+  <script>
+    document.getElementById("logoutBtnTop").addEventListener("click", () => {
+      localStorage.setItem("asrahfc_logged_in", "false");
+      window.location.href = "index.html";
+    });
+
+    const searchInput = document.getElementById("matchSearch");
+    const clearBtn = document.getElementById("clearSearch");
+    const rows = Array.from(document.querySelectorAll("#matchTable tbody tr"));
+    function filterRows() {
+      const q = searchInput.value.trim().toLowerCase();
+      rows.forEach(r => r.style.display = r.innerText.toLowerCase().includes(q) ? "" : "none");
+    }
+
+    searchInput.addEventListener("input", filterRows);
+    clearBtn.addEventListener("click", () => { searchInput.value = ""; filterRows(); });
+  </script>
+  <script src="main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

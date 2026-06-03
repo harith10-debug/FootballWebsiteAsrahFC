@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Team Hub | Asrah FC</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Bootstrap -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="site-bg dashboard-page">
+
+  <!-- Protect Dashboard Page -->
+  <script>
+    if (localStorage.getItem("asrahfc_logged_in") !== "true") {
+      window.location.href = "auth.html";
+    }
+  </script>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-glass sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="index.html">
+        <img
+          src="assets/img/LOGO ASRAH.jpg"
+          alt="Asrah FC Logo"
+          class="brand-logo"
+        />
+        Asrah FC
+      </a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mainNavbar"
+        aria-controls="mainNavbar"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div id="mainNavbar" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">🏠 Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="dashboard.html">⚽ Team Hub</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="dataview1.html">📊 Match History</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="booking.html">📅 Book Friendly</a>
+          </li>
+          <li class="nav-item ms-lg-2">
+            <button id="logoutBtnTop" class="btn btn-outline-light btn-sm px-3">
+              Logout
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="sub-hero dashboard-hero py-5">
+    <div class="container py-4">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-8">
+          <span class="badge badge-brand rounded-pill px-3 py-2 mb-3">
+            👥 Team Hub
+          </span>
+          <h1 class="display-5 fw-bold text-white mb-3">
+            Asrah FC Team Dashboard
+          </h1>
+          <p class="lead text-white-75 mb-0">
+            View squad details, player performance, and season analytics in one clean team hub.
+          </p>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="dashboard-quick-card">
+            <span class="quick-label">Current Season</span>
+            <h3 class="fw-bold mb-2">2026 Campaign</h3>
+            <p class="mb-0">
+              Tracking friendly match results, squad performance, and team progress.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container dashboard-main py-5">
+
+    <!-- Team Snapshot -->
+    <section class="dashboard-section mb-4">
+      <div class="row g-4">
+
+        <div class="col-md-3 col-6">
+          <div class="dashboard-stat-card">
+            <span>⚽</span>
+            <strong>5</strong>
+            <p>Matches</p>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-6">
+          <div class="dashboard-stat-card">
+            <span>🏆</span>
+            <strong>2</strong>
+            <p>Wins</p>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-6">
+          <div class="dashboard-stat-card">
+            <span>🤝</span>
+            <strong>1</strong>
+            <p>Draw</p>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-6">
+          <div class="dashboard-stat-card">
+            <span>👥</span>
+            <strong>5</strong>
+            <p>Players Listed</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Squad Overview + Team Info -->
+    <section class="dashboard-section mb-4">
+      <div class="row g-4">
+
+        <!-- Squad List -->
+        <div class="col-lg-5">
+          <div class="content-card dashboard-card h-100">
+            <span class="eyebrow">👥 Squad Overview</span>
+            <h3 class="fw-bold mb-3">Team Lineup</h3>
+
+            <div class="list-group squad-list dashboard-squad-list">
+              <div class="list-group-item d-flex justify-content-between align-items-center">
+                <div>
+                  <strong>Akmal</strong>
+                  <small class="d-block text-muted">Forward</small>
+                </div>
+                <span class="squad-pill">Attacker</span>
+              </div>
+
+              <div class="list-group-item d-flex justify-content-between align-items-center">
+                <div>
+                  <strong>Pojey</strong>
+                  <small class="d-block text-muted">Defensive Midfielder</small>
+                </div>
+                <span class="squad-pill">Midfield</span>
+              </div>
+
+              <div class="list-group-item d-flex justify-content-between align-items-center">
+                <div>
+                  <strong>Hazim</strong>
+                  <small class="d-block text-muted">Right Winger</small>
+                </div>
+                <span class="squad-pill">Winger</span>
+              </div>
+
+              <div class="list-group-item d-flex justify-content-between align-items-center">
+                <div>
+                  <strong>Dona</strong>
+                  <small class="d-block text-muted">Left Winger</small>
+                </div>
+                <span class="squad-pill">Winger</span>
+              </div>
+
+              <div class="list-group-item d-flex justify-content-between align-items-center">
+                <div>
+                  <strong>Ipong</strong>
+                  <small class="d-block text-muted">Centre Back</small>
+                </div>
+                <span class="squad-pill">Defender</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team Info -->
+        <div class="col-lg-7">
+          <div class="content-card dashboard-card h-100">
+            <span class="eyebrow">🏟️ Club Identity</span>
+            <h3 class="fw-bold mb-3">About Asrah FC</h3>
+
+            <p class="text-muted mb-4">
+              Asrah FC is football team created by INTESABER batch 1721 that show teamwork, discipline, and respect.
+            We are open for friendly matches for who dares to challenge us.
+            </p>
+
+            <div class="row g-3">
+              <div class="col-md-6">
+                <div class="mini-card dashboard-mini-card">
+                  <div class="mini-title">Team Style</div>
+                  <div class="mini-value">Fast Counter Attack</div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="mini-card dashboard-mini-card">
+                  <div class="mini-title">Main Focus</div>
+                  <div class="mini-value">Friendly Match Performance</div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="mini-card dashboard-mini-card">
+                  <div class="mini-title">Team Colour</div>
+                  <div class="mini-value">Away: Blue </div>
+                  <div class="mini-value">Home: Red </div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="mini-card dashboard-mini-card">
+                  <div class="mini-title">Team Status</div>
+                  <div class="mini-value">Active</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-4 d-flex flex-wrap gap-2">
+              <a href="dataview1.html" class="btn btn-brand">
+                View Match History
+              </a>
+              <a href="booking.html" class="btn btn-outline-brand">
+                Book Friendly
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Player Stats + Chart -->
+    <section class="dashboard-section mb-4">
+      <div class="row g-4 align-items-stretch">
+
+        <!-- Player Stats -->
+        <div class="col-lg-7">
+          <div class="content-card dashboard-card h-100">
+            <div class="d-flex flex-wrap justify-content-between align-items-start gap-2 mb-3">
+              <div>
+                <span class="eyebrow">📊 Individual Statistics</span>
+                <h3 class="fw-bold mb-1">Player Stats</h3>
+                <p class="text-muted mb-0">
+                  Quick performance view for listed players.
+                </p>
+              </div>
+
+              <a href="dataview1.html" class="btn btn-brand btn-sm">
+                View Match History
+              </a>
+            </div>
+
+            <div class="table-responsive dashboard-table-wrap">
+              <table class="table table-hover align-middle player-table dashboard-player-table">
+                <thead>
+                  <tr>
+                    <th>Player</th>
+                    <th>Position</th>
+                    <th class="text-end">Goals</th>
+                    <th class="text-end">Assists</th>
+                    <th class="text-end">Matches</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Akmal</td>
+                    <td>Forward</td>
+                    <td class="text-end">4</td>
+                    <td class="text-end">2</td>
+                    <td class="text-end">5</td>
+                  </tr>
+                  <tr>
+                    <td>Pojey</td>
+                    <td>Defensive Midfielder</td>
+                    <td class="text-end">2</td>
+                    <td class="text-end">3</td>
+                    <td class="text-end">5</td>
+                  </tr>
+                  <tr>
+                    <td>Hazim</td>
+                    <td>Right Winger</td>
+                    <td class="text-end">1</td>
+                    <td class="text-end">2</td>
+                    <td class="text-end">4</td>
+                  </tr>
+                  <tr>
+                    <td>Dona</td>
+                    <td>Left Winger</td>
+                    <td class="text-end">1</td>
+                    <td class="text-end">1</td>
+                    <td class="text-end">4</td>
+                  </tr>
+                  <tr>
+                    <td>Ipong</td>
+                    <td>Centre Back</td>
+                    <td class="text-end">0</td>
+                    <td class="text-end">1</td>
+                    <td class="text-end">5</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Game Analytics Chart -->
+        <div class="col-lg-5">
+          <div class="content-card dashboard-card chart-card h-100">
+            <div class="d-flex flex-wrap justify-content-between align-items-start gap-2 mb-3">
+              <div>
+                <span class="eyebrow">📈 Performance View</span>
+                <h3 class="fw-bold mb-1">Game Analytics Chart</h3>
+                <p class="text-muted mb-0">
+                  Season result breakdown based on match history.
+                </p>
+              </div>
+
+              <span class="chart-badge">5 Matches</span>
+            </div>
+
+            <div class="chart-frame" aria-label="Season result breakdown chart">
+              <canvas id="seasonChart"></canvas>
+            </div>
+
+            <div class="chart-summary-row mt-3" aria-label="Season result totals">
+              <span>
+                <strong>2</strong>
+                Wins
+              </span>
+              <span>
+                <strong>1</strong>
+                Draw
+              </span>
+              <span>
+                <strong>2</strong>
+                Losses
+              </span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="dashboard-section">
+      <div class="dashboard-cta">
+        <div>
+          <h3 class="fw-bold text-white mb-2">
+            Ready to arrange another friendly match?
+          </h3>
+          <p class="text-white-75 mb-0">
+            Submit a booking request and let Asrah FC prepare the next game.
+          </p>
+        </div>
+
+        <div class="d-flex flex-wrap gap-2">
+          <a href="booking.html" class="btn btn-light fw-bold rounded-pill px-4">
+            Set a Friendly Match
+          </a>
+          <a href="index.html#match-gallery" class="btn btn-outline-light fw-bold rounded-pill px-4">
+            View Gallery
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer mt-auto">
+    <div class="container d-flex flex-wrap justify-content-between align-items-center gap-3">
+      <p class="mb-0">© 2025 Asrah FC</p>
+
+      <div class="social-links">
+        <a href="#instagram">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Dashboard JS -->
+  <script>
+    const logoutBtnTop = document.getElementById("logoutBtnTop");
+
+    if (logoutBtnTop) {
+      logoutBtnTop.addEventListener("click", () => {
+        localStorage.setItem("asrahfc_logged_in", "false");
+        window.location.href = "index.html";
+      });
+    }
+
+    const seasonChartCanvas = document.getElementById("seasonChart");
+
+    if (seasonChartCanvas && window.Chart) {
+      const ctx = seasonChartCanvas.getContext("2d");
+
+      new Chart(ctx, {
+        type: "doughnut",
+        data: {
+          labels: ["Wins", "Draws", "Losses"],
+          datasets: [
+            {
+              data: [2, 1, 2],
+              backgroundColor: ["#2563eb", "#7c3aed", "#0f172a"],
+              borderColor: "#ffffff",
+              borderWidth: 4,
+              hoverOffset: 8
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          cutout: "58%",
+          layout: {
+            padding: 8
+          },
+          plugins: {
+            legend: {
+              position: "bottom",
+              labels: {
+                boxWidth: 14,
+                padding: 16,
+                usePointStyle: true,
+                pointStyle: "circle",
+                font: {
+                  family: "Poppins",
+                  size: 12,
+                  weight: "600"
+                }
+              }
+            },
+            tooltip: {
+              callbacks: {
+                label: function (context) {
+                  const total = context.dataset.data.reduce((sum, value) => sum + value, 0);
+                  const value = context.parsed;
+                  const percentage = Math.round((value / total) * 100);
+
+                  return `${context.label}: ${value} (${percentage}%)`;
+                }
+              }
+            }
+          }
+        }
+      });
+    }
+  </script>
+
+  <!-- Existing project JS -->
+  <script src="main.js"></script>
+</body>
+</html>

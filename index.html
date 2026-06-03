@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Asrah FC | Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="site-bg">
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top navbar-glass">
+    <div class="container">
+      <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="index.html">
+        <img src="assets/img/LOGO ASRAH.jpg" alt="Asrah FC Logo" class="brand-logo">
+        <span>Asrah FC</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navMain">
+        <ul class="navbar-nav ms-auto gap-lg-2 align-items-lg-center">
+          <li class="nav-item"><a class="nav-link active" href="index.html">🏠 Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="dashboard.html">⚽ Team Hub</a></li>
+          <li class="nav-item"><a class="nav-link" href="dataview1.html">📊 Match History</a></li>
+          <li class="nav-item"><a class="nav-link" href="booking.html">📅 Book Friendly</a></li>
+          <li class="nav-item"><a class="btn btn-brand btn-sm ms-lg-2" href="auth.html">Login / Sign Up</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main display (Hero) -->
+  <header class="hero">
+    <div class="hero-overlay"></div>
+    <div class="container position-relative py-5">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-7 reveal">
+          <span class="badge rounded-pill badge-brand mb-3">Open for friendly matches</span>
+          <h1 class="display-5 fw-bold text-white">Asrah FC — Play Hard, Respect Always.</h1>
+          <p class="text-white-75 mt-3 mb-4 hero-copy">
+            Berminat dengan pasukan kami? Sertai perjalanan Asrah FC, kenali semangat pasukan kami, dan tempah friendly match dengan mudah.
+          </p>
+          <div class="d-flex flex-wrap gap-2">
+            <a class="btn btn-brand btn-lg" href="booking.html">Set a Friendly Match</a>
+            <a class="btn btn-outline-light btn-lg" href="dashboard.html">Explore Team Hub</a>
+            <a class="btn btn-outline-light btn-lg" href="#match-gallery">View Gallery</a>
+          </div>
+        </div>
+
+        <div class="col-lg-5 reveal">
+          <div class="card card-glass p-4 season-card">
+            <h5 class="fw-bold mb-3 text-white">Season Snapshot</h5>
+            <div class="row g-3">
+              <div class="col-6">
+                <div class="stat-tile">
+                  <div class="stat-num">5</div>
+                  <div class="stat-label">Matches Played</div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="stat-tile">
+                  <div class="stat-num">2</div>
+                  <div class="stat-label">Wins</div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="stat-tile">
+                  <div class="stat-num">1</div>
+                  <div class="stat-label">Draws</div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="stat-tile">
+                  <div class="stat-num">2</div>
+                  <div class="stat-label">Losses</div>
+                </div>
+              </div>
+            </div>
+
+            <hr class="border-light opacity-50 my-4">
+            <div class="d-flex flex-wrap justify-content-between text-white small gap-2">
+              <span>Home Ground: Footballhub Eco Grandeur</span>
+              <span>Since: 2017</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Feature cards -->
+  <section class="container py-5">
+    <div class="section-heading text-center mx-auto mb-4 reveal">
+      <h2 class="fw-bold">Every Tactic, Every Take, All Right Here</h2>
+      <p class="text-muted mb-0">View team information, check previous results, and send a friendly match request quickly.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4 reveal">
+        <div class="feature-card h-100">
+          <h5 class="fw-bold mb-2">⚽ Team Hub</h5>
+          <p class="text-muted mb-3">Explore our team profile, squad list, formation, and game analytics.</p>
+          <a class="btn btn-outline-brand btn-sm" href="dashboard.html">View Team Hub</a>
+        </div>
+      </div>
+      <div class="col-md-4 reveal">
+        <div class="feature-card h-100">
+          <h5 class="fw-bold mb-2">📊 Match History</h5>
+          <p class="text-muted mb-3">Review previous friendly match results, opponents, scorers, and venues.</p>
+          <a class="btn btn-outline-brand btn-sm" href="dataview1.html">Check Results</a>
+        </div>
+      </div>
+      <div class="col-md-4 reveal">
+        <div class="feature-card h-100 feature-card-accent">
+          <h5 class="fw-bold mb-2">📅 Book Friendly</h5>
+          <p class="text-muted mb-3">Challenge Asrah FC and submit your friendly match request through WhatsApp.</p>
+          <a class="btn btn-brand btn-sm" href="booking.html">Book Friendly</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Upcoming matches + countdown -->
+  <section class="container pb-5">
+    <div class="row g-4 align-items-stretch">
+      <div class="col-lg-8 reveal">
+        <div class="content-card h-100">
+          <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+            <div>
+              <span class="eyebrow">Booked Slots</span>
+              <h3 class="fw-bold mb-1">Upcoming Matches</h3>
+            </div>
+            <a href="booking.html" class="btn btn-outline-brand btn-sm">Set Your Match</a>
+          </div>
+          <div class="table-responsive">
+            <table class="table table-hover align-middle mb-0">
+              <thead>
+                <tr>
+                  <th>Match</th>
+                  <th>Date</th>
+                  <th>Time</th>
+                  <th>Venue</th>
+                  <th>Type</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Asrah FC vs Thunder FC</td>
+                  <td>15 June 2026</td>
+                  <td>8:30 PM</td>
+                  <td>Arena Futsal</td>
+                  <td><span class="badge text-bg-primary">Friendly</span></td>
+                </tr>
+                <tr>
+                  <td>Asrah FC vs Putra United</td>
+                  <td>22 June 2026</td>
+                  <td>9:00 PM</td>
+                  <td>Sports Planet</td>
+                  <td><span class="badge text-bg-primary">Friendly</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 reveal">
+        <div class="countdown-card h-100">
+          <span class="eyebrow text-white-50">Next Match Countdown</span>
+          <h4 class="fw-bold text-white mt-2">Asrah FC vs Thunder FC</h4>
+          <p class="text-white-50 small mb-3">Countdown for our next match.</p>
+          <div id="nextMatchCountdown" class="countdown-grid" data-match-date="2026-06-15T20:30:00+08:00">
+            <div><strong id="countDays">--</strong><span>Days</span></div>
+            <div><strong id="countHours">--</strong><span>Hours</span></div>
+            <div><strong id="countMinutes">--</strong><span>Min</span></div>
+            <div><strong id="countSeconds">--</strong><span>Sec</span></div>
+          </div>
+          <div id="countdownMessage" class="small text-white-50 mt-3"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Match gallery -->
+  <section class="container pb-5" id="match-gallery">
+    <div class="section-heading text-center mx-auto mb-4 reveal">
+      <span class="eyebrow">Match Gallery</span>
+      <h3 class="fw-bold">Moments of Our Team Through the Lens</h3>
+      <p class="text-muted mb-0">Click a gallery card to view the related Asrah FC photos or highlight video.</p>
+    </div>
+    <div class="row g-4 align-items-stretch">
+      <div class="col-md-6 col-lg-3 reveal">
+        <a href="gallery-match-day.html" class="gallery-card gallery-photo gallery-link" style="--gallery-bg:url('assets/img/C5634E45-275F-462B-A99D-999310307CDC.JPG');" aria-label="Open Match Day Moment gallery">
+          <div>
+            <span class="gallery-chip">📸 Match Day</span>
+            <div class="gallery-label">Match Day Moment</div>
+          </div>
+          <span class="gallery-open">View photos →</span>
+        </a>
+      </div>
+      <div class="col-md-6 col-lg-3 reveal">
+        <a href="gallery-training.html" class="gallery-card gallery-photo gallery-link" style="--gallery-bg:url('assets/img/WhatsApp Image 2026-06-03 at 9.17.02 PM.JPG');" aria-label="Open Training Session gallery">
+          <div>
+            <span class="gallery-chip">🏃 Training</span>
+            <div class="gallery-label">Training Session</div>
+          </div>
+          <span class="gallery-open">View photos →</span>
+        </a>
+      </div>
+      <div class="col-md-6 col-lg-3 reveal">
+        <a href="gallery-friendly-highlight.html" class="gallery-card placeholder-card gallery-link" aria-label="Open Friendly Match Highlight video page">
+          <span>🎥</span>
+          <h5>Friendly Match Highlight</h5>
+          <p>Watch the latest friendly match highlight.</p>
+          <strong class="gallery-open">Watch video →</strong>
+        </a>
+      </div>
+      <div class="col-md-6 col-lg-3 reveal">
+        <a href="gallery-celebration.html" class="gallery-card gallery-photo gallery-link" style="--gallery-bg:url('assets/img/LOGO ASRAH.jpg');" aria-label="Open Team Celebration gallery">
+          <div>
+            <span class="gallery-chip">🏆 Celebration</span>
+            <div class="gallery-label">Team Celebration</div>
+          </div>
+          <span class="gallery-open">View photos →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="container pb-5">
+    <div class="content-card reveal">
+      <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-4">
+        <div>
+          <span class="eyebrow">Testimonials</span>
+          <h3 class="fw-bold mb-1">Feedback From Our Opponents</h3>
+        </div>
+        <a class="btn btn-brand btn-sm" href="booking.html">Book Friendly</a>
+      </div>
+      <div class="row g-3">
+        <div class="col-md-6">
+          <blockquote class="testimonial-card h-100">
+            “Perlawanan yang tersusun dan sangat kompetitif. Asrah FC memberi pengalaman friendly match yang terbaik.”
+            <footer>— Revo Boys FC</footer>
+          </blockquote>
+        </div>
+        <div class="col-md-6">
+          <blockquote class="testimonial-card h-100">
+            “Komunikasi mudah, jadual jelas, dan pasukan sangat sporting. Sesuai untuk friendly match yang berkualiti.”
+            <footer>— Streetnine FC</footer>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer mt-auto">
+    <div class="container d-flex flex-wrap justify-content-between align-items-center gap-3">
+      <p class="mb-0">© 2025 Asrah FC</p>
+
+      <div class="social-links">
+        <a href="#instagram">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
